@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using Zeth.Developer.Data;
 
 namespace Zeth.Developer.Interop.Model
 {
@@ -19,5 +20,10 @@ namespace Zeth.Developer.Interop.Model
         public List<View> Views { get; set; }
         [XmlElement]
         public List<ItemView> ItemViews { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Strings.NamInteropReference}/{Name}/{Guid.ToString()}";
+        }
     }
 }
